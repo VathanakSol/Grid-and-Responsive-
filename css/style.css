@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footers{
+    height: 70px;
+    background-color: rgb(19, 47, 141);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.menuBar{
+    height:70px;
+    background-color: rgb(19, 47, 141);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    & .logo{
+        color: white;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    & .logo a {
+        text-decoration: none;
+        color: white;
+    }
+    & input{
+        font-size: 0.75rem;
+        padding: 8px;
+        width: 50vh;
+        border-radius: 3px;
+        border: none;
+    }
+    & input:focus{
+        outline: none;
+    }
+    & .btn > button{
+        background-color: rgb(6, 20, 99);
+        border:none;
+        color: white;
+        padding: 8px 22px;
+        border-radius: 5px;
+        margin-left: 50px;
+        transition:0.3s;
+        cursor: pointer;
+    }
+    & .btn > button:hover{
+        background-color: rgba(6, 20, 99, 0.5);
+        transform: translate();
+    }
+    & .btn > button:active{
+        background-color:rgba(18, 145, 219, 0.945);
+    }
+}
+body{
+    background-image: url("/img/views.jpg");
+    object-fit: cover;
+}
+.container{
+    max-width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+    display: grid;
+    & img{
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 1.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    & img:hover{
+        transform: scale(1.1);
+    }
+    & img:active{
+        opacity: 75%;
+    }
+    & .box{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    & .item{
+        width: 100%;
+        height: 100vh;
+    }
+    & .item-1{
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+
+    }
+    & .item-2{
+        /* background-color: yellow; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+    }
+    & .item-3{
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+    }
+    & .item-4{
+        /* background-color: purple; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+    }
+    & .popup-img{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.9);
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        /* hide image */
+        display: none; 
+    }
+    & .popup-img > img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 400px;
+        transform: translate(-50%, -50%);
+        border: 5px solid #fff;
+        border-radius: 5px;
+        width: 600px;
+        object-fit: contain;
+    }
+    & .popup-img span{
+        position: absolute;
+        top: 0;
+        right: 12px;
+        font-size: 60px;
+        font-weight: bolder;
+        color: #fff;
+        cursor: pointer;
+        z-index: 100;
+    }
+    
+}
+
+@media (max-width: 768px){
+    .container.popup-img > img{
+        width: 95%;
+    }
+}
+/* For tablet screen mode - grid image display */
+@media (min-width: 576px) and (max-width: 992px){
+    .container > .box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    img{
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+/* For phone screen mode - grid image display*/
+@media (max-width: 576px){
+    .container > .box{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    img{
+        max-width: 65%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+/* For tablet screen mode - navbar display */
+@media  (min-width: 576px) and (max-width: 992px){
+    .menuBar{
+        height: 70px;
+        margin-bottom: 30px;
+    }
+    .search > input{
+        width: 35vh;
+    }
+    .logo > a > h1{
+        font-size: 1rem;
+    }
+    .logo > a > img{
+        transition: 0.3s;
+    }
+}
+/* For phone screen mode - navbar display */
+@media (max-width :576px){
+    .menuBar{
+        height: 70px;
+        margin-bottom: 30px;
+    }
+    .search > input{
+        width: 30vh;
+    }
+    .logo > a > h1{
+        display: none;
+    }
+    .logo > a > img{
+        width: 45px;
+        height: 30px;
+        transition: 0.3s;
+    }
+}
+/* For tablet screen mode - footer display */
+@media (min-width: 576px) and (max-width: 992px){
+    .container > .footers > p{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 576px) {
+    .container > .footers > p{
+        font-size: 0.8rem;
+    }
+    
+}
